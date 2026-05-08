@@ -1,9 +1,10 @@
 import streamlit as st
 import pickle
 import numpy as np
+import os
 
-# Load your trained model
-model = pickle.load(open('diabetes_model.sav', 'rb'))
+model_path = os.path.join(os.path.dirname(__file__), 'diabetes_model.sav')
+model = pickle.load(open(model_path, 'rb'))
 
 st.title('Diabetes Prediction Web App')
 
